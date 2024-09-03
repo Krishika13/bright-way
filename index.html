@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible Home Screen</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins';
+            margin: 0;
+            padding: 0;
+            background-color:#3A4A63;
+            color: #333;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Image Styles */
+        .header-image {
+            width: 100%;
+            max-width: 600px;
+        }
+        /* Welcome Message */
+        .welcome-message {
+            font-size: 3em;
+            color:white;
+            margin: 10px 0;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            transition: color 0.3s;
+        }
+        /* Introduction */
+        .introduction {
+            font-size: 1.1em;
+            color:#F5F5F5;
+            margin: 20px 0;
+            max-width: 600px;
+            padding: 0 20px;
+        }
+
+        /* Get Started Button */
+        .get-started-button {
+            background-color:white;
+            color:black;
+            padding: 15px 30px;
+            font-size: 1.5em;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .get-started-button:hover {
+            background-color: #0056b3;
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .get-started-button:active {
+            transform: translateY(0);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .get-started-button:focus {
+            outline: 2px dashed #0056b3;
+            outline-offset: 4px;
+        }
+
+        /* Footer */
+        footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            color: #d0d0d0;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            .welcome-message {
+                font-size: 2em;
+            }
+
+            .introduction {
+                font-size: 1em;
+            }
+
+            .get-started-button {
+                padding: 10px 20px;
+                font-size: 1.2em;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .introduction {
+                font-size: 0.9em;
+            }
+
+            .get-started-button {
+                padding: 8px 16px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Image of visually impaired people -->
+        <img src="image (2).png" class="header-image">
+    </header>
+    <main role="main">
+        <!-- Welcome Message -->
+        <div class="welcome-message">BRIGHT WAY</div>
+        <!-- Introduction for Screen Readers -->
+        <div class="introduction" aria-live="polite">
+            Guiding Every Step with Precision
+        </div>
+        <!-- Get Started Button -->
+        <button class="get-started-button" id="get-started-button" aria-label="Get Started">Get Started</button>
+    </main>
+    <footer>
+        &copy; 2024 Bright Way
+    </footer>
+    <script>
+        // JavaScript for Button Click
+        document.getElementById('get-started-button').addEventListener('click', function() {
+            window.location.href = 'navigation.html';
+        });
+    </script>
+</body>
+</html>
